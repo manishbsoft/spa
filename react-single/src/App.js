@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 
-const App = ({ name }) => {
-  const [counter, updateCounter] = useState(0);
+import Counter from "./Counter";
+import CounterFn from "./CounterFn";
 
-  const handleChange = (type) => {
-    updateCounter((oldCounter) => oldCounter + type);
-  };
+const userDetails = {
+  name: "John",
+  age: 23
+}
 
-  return (
-    <>
-      <h1>{name}</h1>
-      <h3>Counter: {counter}</h3>
-      <button onClick={() => handleChange(-1)}>Decrement</button>
-      <button onClick={() => handleChange(+1)}>Increment</button>
-    </>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <>
+        <h1>React App</h1>
+        <p>This is my first react component.</p>
+        <h2>Counter Class based Component</h2>
+        <Counter name="Counter" date="04/20/2021" userDetails={userDetails} />
+        <h2>Counter Fn Component</h2>
+        <CounterFn name="Counter Component" date="04/20/2021" />
+      </>
+    );
+  }
+}
 
 export default App;
