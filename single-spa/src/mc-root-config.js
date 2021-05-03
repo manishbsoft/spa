@@ -24,6 +24,13 @@ registerApplication({
     activeWhen: ['/react-multiple']
 });
 
+registerApplication({
+  name: "@mc/react-app",
+  app: () =>
+    System.import("@mc/react-app"),
+    activeWhen: ['/react-app']
+});
+
 start({
   urlRerouteOnly: true,
 });

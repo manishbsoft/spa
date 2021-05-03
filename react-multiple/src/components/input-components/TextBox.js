@@ -20,7 +20,6 @@ const TextBox = (props) => {
           type="text"
           name={name}
           value={value}
-          required={}
           onChange={(e) => handleChange(e)}
         />
     )
